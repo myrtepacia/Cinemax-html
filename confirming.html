@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In - Cinemax</title>
+  <title>Confirming Payment - Cinemax</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,47 +21,31 @@
         <nav class="menu">
           <a href="index.html#now-showing">Now Showing</a>
           <a href="index.html#coming-soon">Upcoming Shows</a>
+          <a href="account.html">My Bookings</a>
         </nav>
         <div class="auth-buttons">
-          <a class="button button-outline" href="signin.html">Sign In</a>
-          <a class="button button-red" href="signup.html">Sign Up</a>
+          <button class="button button-red" type="button" id="sign-out">Sign Out</button>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="form-page">
-    <div class="form-card">
+  <main class="confirming-page">
 
-      <h1>Welcome back</h1>
-      <p class="form-intro">Sign in to book your seats.</p>
+    <div class="spinner" id="spinner"></div>
 
-      <p class="form-message form-message-error hidden" id="form-message">
-        That email and password do not match an account.
-      </p>
+    <h1 id="heading">Confirming your payment</h1>
+    <p class="form-intro" id="detail">This usually takes a few seconds. Please do not close this page.</p>
 
-      <form id="signin-form" novalidate>
+    <p class="form-message form-message-notice hidden" id="page-message">
+      This is taking longer than usual. Your payment is safe &mdash; press Check again in a moment.
+    </p>
 
-        <div class="form-field">
-          <label for="email">Email address</label>
-          <input id="email" name="email" type="email"
-                 placeholder="juandelacruz@gmail.com"
-                 autocomplete="email" required>
-        </div>
-
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password"
-                 autocomplete="current-password" required>
-        </div>
-
-        <button class="button button-red" type="submit" id="submit">Sign In</button>
-
-      </form>
-
-      <p class="form-switch">Don't have an account? <a href="signup.html" id="signup-link">Create account</a></p>
-
+    <div class="ticket-actions hidden" id="actions">
+      <a class="button button-outline" href="index.html">Back to Movies</a>
+      <button class="button button-red" type="button" id="check-again">Check again</button>
     </div>
+
   </main>
 
   <footer class="site-footer">
